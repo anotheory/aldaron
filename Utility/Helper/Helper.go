@@ -21,7 +21,13 @@ func ConvertStringPointerArrayToValue(input [][]*string) [][]string {
 	for rowIdx, _ := range input {
 		output = append(output, []string{})
 		for colIdx, _ := range input[rowIdx] {
-			output[rowIdx] = append(output[rowIdx], *input[rowIdx][colIdx])
+			fmt.Print(rowIdx, colIdx, "\n")
+			fmt.Print(input[rowIdx][colIdx], "\n")
+			if input[rowIdx][colIdx] == nil {
+				output[rowIdx] = append(output[rowIdx], "")
+			} else {
+				output[rowIdx] = append(output[rowIdx], *input[rowIdx][colIdx])
+			}
 		}
 	}
 	return output
