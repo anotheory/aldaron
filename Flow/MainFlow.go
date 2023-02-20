@@ -24,10 +24,10 @@ func Main() {
 	Helper.CleanOutputDirectory()
 	var dbConfig DbConfigModel.DbConfig = DbConfigModel.DbConfig{
 		Host:     "localhost",
-		Port:     5432,
-		User:     "postgres",
+		Port:     5082,
+		User:     "root",
 		Password: "",
-		DbName:   "postgres",
+		DbName:   "ngernturbo",
 		SslMode:  "disable",
 	}
 	db := Database.GetDbConnection(dbConfig)
