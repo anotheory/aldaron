@@ -1,4 +1,4 @@
-package Model
+package model
 
 type Position struct {
 	Id   int64  `json:"id"`

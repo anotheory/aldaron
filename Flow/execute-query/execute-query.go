@@ -1,10 +1,10 @@
-package ExecuteQuery
+package execute_query
 
 import (
-	"aldaron/Constant"
-	QueryConfigModel "aldaron/Model/QueryConfig"
-	"aldaron/Utility/Database"
-	"aldaron/Utility/Helper"
+	"aldaron/constant"
+	"aldaron/model/config"
+	"aldaron/utility/database"
+	"aldaron/utility/helper"
 	"database/sql"
 	"encoding/csv"
 	"os"
@@ -29,14 +29,14 @@ func formatQueryOutput(output *sql.Rows) ([]string, [][]string) {
 		}
 		results = append(results, strs)
 	}
-	resultArray := Helper.ConvertStringPointerArrayToValue(results)
+	resultArray := helper.ConvertStringPointerArrayToValue(results)
 	return columns, resultArray
 }
 
 func writeOutputToFile(tableSchema string, outputColumns []string, outputArray [][]string) {
-	outputFilePath := strings.Join([]string{Constant.OUTPUT_DIR, tableSchema}, "/") + ".csv"
+	outputFilePath := strings.Join([]string{constant.OUTPUT_DIR, tableSchema}, "/") + ".csv"
 	outputFile, err := os.Create(outputFilePath)
-	Helper.CheckError(err)
+	helper.CheckError(err)
 	outputWriter := csv.NewWriter(outputFile)
 	// Write column header rows
 	outputWriter.Write(outputColumns)
@@ -45,8 +45,8 @@ func writeOutputToFile(tableSchema string, outputColumns []string, outputArray [
 	outputFile.Close()
 }
 
-func Main(db *sql.DB, queryConfig QueryConfigModel.QueryConfig) {
-	rows := Database.ExecuteQuery(db, queryConfig.Input.QueryString)
+func Main(db *sql.DB, queryConfig config.QueryConfig) {
+	rows := database.ExecuteQuery(db, queryConfig.Input.QueryString)
 	outputColumns, outputArray := formatQueryOutput(rows)
 	writeOutputToFile(queryConfig.TableSchema, outputColumns, outputArray)
 }

@@ -1,7 +1,7 @@
 package main
 
 import (
-	MainFlow "aldaron/Flow"
+	MainFlow "aldaron/flow"
 )
 
 func main() {

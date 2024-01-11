@@ -1,4 +1,4 @@
-package QueryConfig
+package config
 
 type InputFilePath struct {
 	Column     string

@@ -1,14 +1,14 @@
-package Database
+package database
 
 import (
-	DbConfigModel "aldaron/Model/DbConfig"
+	config "aldaron/model/config"
 	"database/sql"
 	"fmt"
 
 	_ "github.com/lib/pq"
 )
 
-func GetDbConnection(dbConfig DbConfigModel.DbConfig) *sql.DB {
+func GetDbConnection(dbConfig config.DbConfig) *sql.DB {
 	var connString string
 	if dbConfig.Password == "" {
 		connString = fmt.Sprintf("host=%s port=%d user=%s dbname=%s sslmode=%s",

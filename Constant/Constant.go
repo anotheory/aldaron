@@ -1,4 +1,4 @@
-package Constant
+package constant
 
 var DATATYPE_WITH_QUOTE = []string{
 	"character varying",

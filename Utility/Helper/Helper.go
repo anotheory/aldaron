@@ -1,7 +1,7 @@
-package Helper
+package helper
 
 import (
-	"aldaron/Constant"
+	"aldaron/constant"
 	"encoding/csv"
 	"fmt"
 	"os"
@@ -59,8 +59,8 @@ func ReadFileAsRawContent(filePath string) string {
 }
 
 func CleanOutputDirectory() {
-	err := os.RemoveAll(Constant.OUTPUT_DIR)
+	err := os.RemoveAll(constant.OUTPUT_DIR)
 	CheckError(err)
-	err = os.Mkdir(Constant.OUTPUT_DIR, 0777)
+	err = os.Mkdir(constant.OUTPUT_DIR, 0777)
 	CheckError(err)
 }

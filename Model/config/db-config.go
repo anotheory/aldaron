@@ -1,4 +1,4 @@
-package DbConfig
+package config
 
 type DbConfig struct {
 	Host     string
