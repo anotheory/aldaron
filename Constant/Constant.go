@@ -1,4 +1,4 @@
-package Constant
+package constant
 
 var DATATYPE_WITH_QUOTE = []string{
 	"character varying",
@@ -6,10 +6,10 @@ var DATATYPE_WITH_QUOTE = []string{
 	"timestamp with time zone",
 }
 
-const INPUT_DIR = "./Input"
-const OUTPUT_DIR = "./Output"
+const INPUT_DIR = "./input"
+const OUTPUT_DIR = "./output"
 
-const INPUT_ORDER_DIR = "./Order/order.csv"
+const INPUT_ORDER_DIR = "./order/order.csv"
 
 const COLUMN_FILE_NAME string = "column.csv"
 const DATA_FILE_NAME string = "input.csv"

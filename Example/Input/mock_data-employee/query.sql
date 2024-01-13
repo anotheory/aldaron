@@ -1,1 +1,0 @@
-insert into mock_data.employee [auto:columns] values [auto:values] returning *;

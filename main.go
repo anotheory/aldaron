@@ -1,9 +1,8 @@
 package main
 
-import (
-	MainFlow "aldaron/Flow"
-)
+import "aldaron/flow"
 
 func main() {
-	MainFlow.Main()
+	mainFlow := flow.MainFlow{}
+	mainFlow.Main()
 }

@@ -1,1 +1,0 @@
-insert into mock_data.position [auto:columns] values [auto:values] returning *;
